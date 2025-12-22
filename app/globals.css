@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --terminal-green: #00ff41;
+  --terminal-cyan: #00d4ff;
+  --terminal-black: #0a0a0a;
+  --terminal-dark: #0d1117;
+  --terminal-gray: #161b22;
+  --terminal-border: #30363d;
+  --terminal-text: #c9d1d9;
+  --terminal-muted: #8b949e;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--terminal-green) var(--terminal-dark);
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--terminal-dark);
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--terminal-green);
+  border-radius: 4px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--terminal-cyan);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'JetBrains Mono', monospace;
+  background-color: var(--terminal-black);
+  color: var(--terminal-text);
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: var(--terminal-green);
+  color: var(--terminal-black);
+}
+
+/* Scanline Effect Overlay */
+.scanlines {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.scanlines::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.1) 2px,
+    rgba(0, 0, 0, 0.1) 4px
+  );
+  pointer-events: none;
+}
+
+.scanlines::after {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: 0;
+  right: 0;
+  height: 200%;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 255, 65, 0.02) 50%,
+    transparent 100%
+  );
+  animation: scanline 8s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes scanline {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(50%); }
+}
+
+/* CRT Flicker Effect */
+.crt-flicker {
+  animation: flicker 0.15s infinite;
+}
+
+@keyframes flicker {
+  0% { opacity: 0.97; }
+  50% { opacity: 1; }
+  100% { opacity: 0.98; }
+}
+
+/* Text Glow Effects */
+.text-glow-green {
+  text-shadow: 0 0 10px var(--terminal-green), 0 0 20px var(--terminal-green), 0 0 30px var(--terminal-green);
+}
+
+.text-glow-cyan {
+  text-shadow: 0 0 10px var(--terminal-cyan), 0 0 20px var(--terminal-cyan), 0 0 30px var(--terminal-cyan);
+}
+
+.text-glow-subtle {
+  text-shadow: 0 0 5px currentColor;
+}
+
+/* Border Glow */
+.border-glow {
+  box-shadow: 0 0 0 1px rgba(0, 255, 65, 0.2), 
+              0 0 15px rgba(0, 255, 65, 0.1),
+              inset 0 0 30px rgba(0, 255, 65, 0.02);
+}
+
+.border-glow:hover {
+  box-shadow: 0 0 0 1px rgba(0, 255, 65, 0.4), 
+              0 0 25px rgba(0, 255, 65, 0.2),
+              inset 0 0 30px rgba(0, 255, 65, 0.05);
+}
+
+/* Cursor Blink */
+.cursor-blink::after {
+  content: '█';
+  animation: blink 1s step-end infinite;
+  color: var(--terminal-green);
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Terminal Prompt */
+.prompt::before {
+  content: '❯ ';
+  color: var(--terminal-green);
+}
+
+/* Typing Animation */
+.typing-text {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid var(--terminal-green);
+  animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: var(--terminal-green); }
+}
+
+/* Gradient Background */
+.bg-gradient-terminal {
+  background: linear-gradient(
+    135deg,
+    var(--terminal-black) 0%,
+    var(--terminal-dark) 50%,
+    var(--terminal-black) 100%
+  );
+}
+
+/* Matrix Rain Background Pattern */
+.matrix-bg {
+  background-image: 
+    radial-gradient(ellipse at top, rgba(0, 255, 65, 0.05) 0%, transparent 50%),
+    radial-gradient(ellipse at bottom, rgba(0, 212, 255, 0.03) 0%, transparent 50%);
+}
+
+/* Grid Pattern */
+.grid-pattern {
+  background-size: 50px 50px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 255, 65, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 255, 65, 0.03) 1px, transparent 1px);
+}
+
+/* Glass Effect */
+.glass {
+  background: rgba(13, 17, 23, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Tech Badge */
+.tech-badge {
+  @apply px-3 py-1 text-xs font-medium rounded border transition-all duration-300;
+  background: rgba(0, 255, 65, 0.05);
+  border-color: rgba(0, 255, 65, 0.2);
+  color: var(--terminal-green);
+}
+
+.tech-badge:hover {
+  background: rgba(0, 255, 65, 0.15);
+  border-color: rgba(0, 255, 65, 0.5);
+  box-shadow: 0 0 15px rgba(0, 255, 65, 0.3);
+}
+
+/* Section styling */
+section {
+  position: relative;
+}
+
+section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  max-width: 600px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 255, 65, 0.3),
+    transparent
+  );
+}
+
+/* Link Hover Effect */
+a {
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: var(--terminal-green);
+}
+
+/* Button Base */
+.btn-terminal {
+  @apply px-6 py-3 font-medium transition-all duration-300 border rounded;
+  background: transparent;
+  border-color: var(--terminal-green);
+  color: var(--terminal-green);
+}
+
+.btn-terminal:hover {
+  background: var(--terminal-green);
+  color: var(--terminal-black);
+  box-shadow: 0 0 20px rgba(0, 255, 65, 0.5);
+}
+
+.btn-terminal-filled {
+  @apply px-6 py-3 font-medium transition-all duration-300 rounded;
+  background: var(--terminal-green);
+  color: var(--terminal-black);
+}
+
+.btn-terminal-filled:hover {
+  box-shadow: 0 0 30px rgba(0, 255, 65, 0.6);
+  transform: translateY(-2px);
+}
+
+/* Smooth reveal animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
