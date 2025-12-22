@@ -1,2 +1,2 @@
 # portfolio
-A persona
+A personal portfolio for myself
