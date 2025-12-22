@@ -38,10 +38,10 @@ export default function Hero() {
   }, [displayText, isDeleting, titleIndex]);
 
   const stats = [
-    { value: "4.83", label: "GPA" },
+    { value: "4.667", label: "GPA" },
     { value: "114", label: "AMC 12B" },
     { value: "$400", label: "Hackathon Win" },
-    { value: "200+", label: "Hours Volunteered" },
+    { value: "250+", label: "Hours Volunteered in HS" },
   ];
 
   return (
