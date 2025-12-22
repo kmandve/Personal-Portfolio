@@ -14,6 +14,7 @@ const apCourses = [
 const currentCourses = [
   "Calculus III (Dual Credit)",
   "Advanced Topics",
+  "AP Physics C",
 ];
 
 export default function Education() {
@@ -44,7 +45,7 @@ export default function Education() {
 
               <div className="flex items-center gap-4 py-3 border-y border-terminal-border/50">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-terminal-green">4.83</div>
+                  <div className="text-3xl font-bold text-terminal-green">4.667W/4.0UW</div>
                   <div className="text-xs text-terminal-muted">GPA</div>
                 </div>
                 <div className="h-12 w-px bg-terminal-border" />
@@ -76,7 +77,7 @@ export default function Education() {
                 <code>
 {`{`}
 {`  `}<span className="text-terminal-cyan">&quot;name&quot;</span>: <span className="text-terminal-yellow">&quot;academic-profile&quot;</span>,
-{`  `}<span className="text-terminal-cyan">&quot;version&quot;</span>: <span className="text-terminal-yellow">&quot;4.83.0&quot;</span>,
+{`  `}<span className="text-terminal-cyan">&quot;version&quot;</span>: <span className="text-terminal-yellow">&quot;4.667.0&quot;</span>,
 {`  `}<span className="text-terminal-cyan">&quot;apCourses&quot;</span>: {`{`}
 {apCourses.map((course, i) => (
   <span key={course.name}>
