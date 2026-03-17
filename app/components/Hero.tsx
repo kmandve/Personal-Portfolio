@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 const titles = [
-  "Full-Stack Developer",
-  "AI Engineer",
-  "Robotics Enthusiast",
+  "Software Developer",
+  "AI + Robotics Builder",
+  "STEM Competitor",
   "Problem Solver",
 ];
 
@@ -38,10 +38,10 @@ export default function Hero() {
   }, [displayText, isDeleting, titleIndex]);
 
   const stats = [
-    { value: "4.667", label: "GPA" },
+    { value: "4.667", label: "W GPA" },
+    { value: "USAPhO", label: "Qualifier" },
     { value: "114", label: "AMC 12B" },
-    { value: "$400", label: "Hackathon Win" },
-    { value: "250+", label: "Hours Volunteered in HS" },
+    { value: "$700", label: "STEAM Showcase" },
   ];
 
   return (
@@ -124,10 +124,19 @@ export default function Hero() {
                 transition={{ delay: 1.2 }}
                 className="text-terminal-text/80 max-w-2xl leading-relaxed"
               >
-                Driven high school student with a strong foundation in computer engineering, 
-                robotics, and AI. Building full-stack applications, AI-powered hardware systems, 
-                and competing at state-level competitions.
+                High school engineer building software, AI systems, and robotics through competition
+                projects, teaching, and hands-on engineering. Focused on useful systems that work in
+                the real world.
               </motion.p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.3 }}
+              className="mt-6 text-sm text-terminal-muted"
+            >
+              Class of 2027 • Vernon Hills High School • Software, robotics, and STEM competition builds
             </motion.div>
 
             {/* Stats Grid */}

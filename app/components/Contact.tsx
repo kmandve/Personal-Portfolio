@@ -28,8 +28,6 @@ const contactLinks = [
 
 export default function Contact() {
   const currentYear = new Date().getFullYear();
-  const birthYear = 2009;
-  const uptime = currentYear - birthYear;
 
   return (
     <section id="contact" className="py-24 px-4">
@@ -47,14 +45,12 @@ export default function Contact() {
           <p className="text-terminal-muted text-sm">~/contact $ ./reach_out.sh</p>
         </motion.div>
 
-        {/* Contact Terminal */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="border border-terminal-border rounded-lg overflow-hidden bg-terminal-dark/50 backdrop-blur-sm border-glow"
         >
-          {/* Terminal Header */}
           <div className="flex items-center gap-2 px-4 py-3 bg-terminal-gray border-b border-terminal-border">
             <div className="flex gap-2">
               <div className="w-3 h-3 rounded-full bg-[#ff5f56]" />
@@ -64,7 +60,6 @@ export default function Contact() {
             <span className="ml-2 text-xs text-terminal-muted">contact@kautik ~ </span>
           </div>
 
-          {/* Terminal Content */}
           <div className="p-8">
             <div className="mb-8">
               <div className="flex items-start mb-4">
@@ -72,12 +67,11 @@ export default function Contact() {
                 <span className="text-terminal-muted">echo &quot;Let&apos;s connect!&quot;</span>
               </div>
               <p className="text-terminal-text text-lg ml-4">
-                I&apos;m always interested in new opportunities, collaborations, or just a chat about tech. 
-                Feel free to reach out!
+                I&apos;m open to opportunities and engineering collaborations.
+                Reach out if you want to talk software, AI, embedded systems, or robotics.
               </p>
             </div>
 
-            {/* Contact Links */}
             <div className="space-y-4">
               {contactLinks.map((link, index) => (
                 <motion.a
@@ -110,7 +104,6 @@ export default function Contact() {
           </div>
         </motion.div>
 
-        {/* Footer */}
         <motion.footer
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -118,7 +111,6 @@ export default function Contact() {
           transition={{ delay: 0.3 }}
           className="mt-16 text-center"
         >
-          {/* ASCII Art Signature */}
           <pre className="text-terminal-green/20 text-[8px] md:text-xs leading-tight font-mono mb-8 select-none inline-block">
 {`
 ██╗  ██╗ █████╗ ██╗   ██╗████████╗██╗██╗  ██╗
@@ -132,7 +124,7 @@ export default function Contact() {
 
           <div className="space-y-2 text-sm text-terminal-muted">
             <p>
-              <span className="text-terminal-green">System uptime:</span> {uptime} years
+              <span className="text-terminal-green">Current status:</span> Open to opportunities
             </p>
             <p className="text-xs">
               Built with <span className="text-terminal-green">Next.js</span> + <span className="text-terminal-cyan">Tailwind</span> + <span className="text-terminal-purple">Framer Motion</span>
@@ -142,7 +134,6 @@ export default function Contact() {
             </p>
           </div>
 
-          {/* Terminal prompt at bottom */}
           <div className="mt-8 flex justify-center items-center gap-2 text-sm">
             <span className="text-terminal-green">❯</span>
             <span className="text-terminal-muted">exit</span>

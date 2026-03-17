@@ -4,12 +4,15 @@ import Navbar from "./components/Navbar";
 
 export const metadata: Metadata = {
   title: "Kautik Mandve | Developer & Engineer",
-  description: "High school student with a strong foundation in computer engineering, robotics, and AI. Building the future one project at a time.",
-  keywords: ["Kautik Mandve", "Developer", "Engineer", "Portfolio", "AI", "Robotics", "Computer Science"],
+  description: "Portfolio of Kautik Mandve: AI and robotics projects, software engineering, and STEM competition work.",
+  keywords: ["Kautik Mandve", "Developer", "Engineer", "Portfolio", "AI", "Robotics", "Computer Science", "USAPhO", "AIME"],
   authors: [{ name: "Kautik Mandve" }],
+  icons: {
+    icon: "/icon.svg",
+  },
   openGraph: {
     title: "Kautik Mandve | Developer & Engineer",
-    description: "High school student with a strong foundation in computer engineering, robotics, and AI.",
+    description: "AI and robotics projects, software engineering, and STEM competition work.",
     type: "website",
   },
 };

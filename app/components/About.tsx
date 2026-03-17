@@ -6,10 +6,13 @@ import TerminalWindow from "./TerminalWindow";
 export default function About() {
   const contactInfo = {
     name: "Kautik Mandve",
+    school: "Vernon Hills High School",
+    classYear: "2027",
     location: "Vernon Hills, Illinois",
-    phone: "+1 (224) 778-9009",
+    phone: "(224) 778-9009",
+    phoneHref: "+12247789009",
     email: "kautikmandve@gmail.com",
-    linkedin: "linkedin.com/in/kautik-mandve-8779b62b7",
+    linkedin: "https://www.linkedin.com/in/kautik-mandve-8779b62b7/",
     status: "Open to opportunities",
   };
 
@@ -38,31 +41,29 @@ export default function About() {
               </div>
               
               <p className="text-terminal-text/90">
-                I&apos;m a driven high school student with an analytical mind and a passion 
-                for building things that matter. My journey in tech started with curiosity 
-                and has evolved into hands-on experience with full-stack web development, 
-                AI/ML systems, and robotics.
+                I&apos;m a high school engineer focused on software, embedded systems, and
+                applied AI. Most of my work has come through building practical systems,
+                competing in STEM events, and learning by shipping projects that have to work.
               </p>
 
               <p className="text-terminal-text/90">
-                I thrive on challenges—whether it&apos;s leading a team at a hackathon, 
-                qualifying for AIME, or building an AI-powered trash can that actually 
-                works. I&apos;m persistent, fast-learning, and always looking for the 
-                next problem to solve.
+                I teach STEM through XPerience Coding and have worked as a tutor at Kumon,
+                which keeps me practical about communication, iteration, and explaining
+                technical ideas clearly.
               </p>
 
               <p className="text-terminal-text/90">
-                Currently seeking opportunities to apply my skills in real-world 
-                environments and continue growing as an engineer.
+                I pair that engineering focus with a strong math and physics background,
+                including USAPhO and AIME qualification.
               </p>
 
               <div className="pt-4 border-t border-terminal-border/50">
                 <span className="text-terminal-cyan">// Currently focused on:</span>
                 <ul className="mt-2 space-y-1 text-terminal-muted">
-                  <li>• AI/ML & Computer Vision</li>
-                  <li>• Full-Stack Development</li>
-                  <li>• Robotics & Embedded Systems</li>
-                  <li>• Competitive Mathematics</li>
+                  <li>• Applied software and system building</li>
+                  <li>• Embedded systems, computer vision, and automation</li>
+                  <li>• Robotics, prototyping, and competition builds</li>
+                  <li>• Competitive mathematics and physics</li>
                 </ul>
               </div>
             </div>
@@ -79,6 +80,8 @@ export default function About() {
                 <code>
 {`{`}
 {`  `}<span className="text-terminal-cyan">&quot;name&quot;</span>: <span className="text-terminal-yellow">&quot;{contactInfo.name}&quot;</span>,
+{`  `}<span className="text-terminal-cyan">&quot;school&quot;</span>: <span className="text-terminal-yellow">&quot;{contactInfo.school}&quot;</span>,
+{`  `}<span className="text-terminal-cyan">&quot;classYear&quot;</span>: <span className="text-terminal-yellow">&quot;{contactInfo.classYear}&quot;</span>,
 {`  `}<span className="text-terminal-cyan">&quot;location&quot;</span>: <span className="text-terminal-yellow">&quot;{contactInfo.location}&quot;</span>,
 {`  `}<span className="text-terminal-cyan">&quot;phone&quot;</span>: <span className="text-terminal-yellow">&quot;{contactInfo.phone}&quot;</span>,
 {`  `}<span className="text-terminal-cyan">&quot;email&quot;</span>: <span className="text-terminal-yellow">&quot;{contactInfo.email}&quot;</span>,
@@ -96,7 +99,7 @@ export default function About() {
                   📧 Email
                 </a>
                 <a
-                  href={`https://${contactInfo.linkedin}`}
+                  href={contactInfo.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="tech-badge hover:bg-terminal-cyan/20"
@@ -105,7 +108,7 @@ export default function About() {
                   💼 LinkedIn
                 </a>
                 <a
-                  href={`tel:${contactInfo.phone}`}
+                  href={`tel:${contactInfo.phoneHref}`}
                   className="tech-badge hover:bg-terminal-purple/20"
                   style={{ borderColor: "rgba(189, 147, 249, 0.2)", color: "#bd93f9" }}
                 >

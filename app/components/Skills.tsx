@@ -4,34 +4,28 @@ import { motion } from "framer-motion";
 
 const skillCategories = [
   {
-    name: "Languages",
+    name: "Programming",
     icon: "💻",
-    skills: ["Python", "Java", "C++", "JavaScript", "HTML/CSS"],
+    skills: ["Python", "C++", "Java", "JavaScript"],
     color: "terminal-green",
   },
   {
-    name: "Hardware & Embedded",
+    name: "Engineering",
     icon: "🔌",
-    skills: ["Arduino", "Raspberry Pi", "ESP32", "Circuit Design", "Sensor Integration"],
+    skills: ["Embedded Systems", "Arduino", "ESP32", "Circuit Design", "Sensor Integration"],
     color: "terminal-cyan",
   },
   {
-    name: "Tools & Platforms",
+    name: "Tools",
     icon: "🛠️",
-    skills: ["Git & GitHub", "VS Code", "Arduino IDE", "Fusion 360", "Onshape"],
+    skills: ["Flask", "Git & GitHub", "Fusion 360", "VS Code"],
     color: "terminal-purple",
   },
   {
-    name: "Prototyping",
+    name: "Fabrication",
     icon: "🖨️",
-    skills: ["3D Printing", "Rapid Prototyping", "CAD Design", "Block Coding"],
+    skills: ["Rapid Prototyping", "3D Printing", "Mechanical Prototyping"],
     color: "terminal-yellow",
-  },
-  {
-    name: "Soft Skills",
-    icon: "🎯",
-    skills: ["Team Leadership", "Presentations", "Pitching", "Problem-Solving", "Communication"],
-    color: "terminal-orange",
   },
 ];
 
@@ -62,13 +56,11 @@ export default function Skills() {
               transition={{ delay: categoryIndex * 0.1 }}
               className="border border-terminal-border rounded-lg overflow-hidden bg-terminal-dark/50 hover:border-terminal-green/30 transition-colors"
             >
-              {/* Header */}
               <div className="px-4 py-3 bg-terminal-gray border-b border-terminal-border flex items-center gap-3">
                 <span className="text-xl">{category.icon}</span>
                 <span className="font-medium text-terminal-text">{category.name}</span>
               </div>
 
-              {/* Skills */}
               <div className="p-4">
                 <div className="flex flex-wrap gap-2">
                   {category.skills.map((skill, skillIndex) => (
@@ -84,7 +76,6 @@ export default function Skills() {
                         ${category.color === "terminal-cyan" ? "bg-terminal-cyan/10 border-terminal-cyan/30 text-terminal-cyan hover:bg-terminal-cyan/20" : ""}
                         ${category.color === "terminal-purple" ? "bg-terminal-purple/10 border-terminal-purple/30 text-terminal-purple hover:bg-terminal-purple/20" : ""}
                         ${category.color === "terminal-yellow" ? "bg-terminal-yellow/10 border-terminal-yellow/30 text-terminal-yellow hover:bg-terminal-yellow/20" : ""}
-                        ${category.color === "terminal-orange" ? "bg-terminal-orange/10 border-terminal-orange/30 text-terminal-orange hover:bg-terminal-orange/20" : ""}
                       `}
                     >
                       {skill}
@@ -96,7 +87,6 @@ export default function Skills() {
           ))}
         </div>
 
-        {/* Matrix-style floating text */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -105,7 +95,7 @@ export default function Skills() {
           className="mt-12 p-6 border border-terminal-border/50 rounded-lg bg-terminal-dark/30 text-center"
         >
           <p className="text-terminal-muted text-sm font-mono">
-            <span className="text-terminal-green">&gt;</span> Always learning, always building
+            <span className="text-terminal-green">&gt;</span> Software, embedded systems, and robotics
             <span className="animate-cursor-blink ml-1">▊</span>
           </p>
         </motion.div>

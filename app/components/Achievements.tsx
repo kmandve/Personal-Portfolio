@@ -4,6 +4,13 @@ import { motion } from "framer-motion";
 
 const achievements = [
   {
+    title: "USAPhO Qualifier",
+    subtitle: "Top ~440 physics students nationwide",
+    icon: "⚛️",
+    category: "Physics",
+    highlight: true,
+  },
+  {
     title: "AIME Qualifier",
     subtitle: "AMC 12B Score: 114",
     icon: "🧮",
@@ -11,46 +18,33 @@ const achievements = [
     highlight: true,
   },
   {
+    title: "ICTM State Champion Team",
+    subtitle: "State champion team in math competition",
+    icon: "🏅",
+    category: "Mathematics",
+    highlight: true,
+  },
+  {
     title: "Science Olympiad State",
-    subtitle: "2nd Place at State Competition",
+    subtitle: "2nd Place Robot Tour • 4th Chemistry Lab",
     icon: "🔬",
     category: "Science",
     highlight: true,
   },
   {
     title: "VHACK Hackathon",
-    subtitle: "1st Place Winner • $400 Prize",
+    subtitle: "1st Place Engineering • $400 Prize",
     icon: "🏆",
     category: "Competition",
     highlight: true,
   },
   {
-    title: "President's Award",
-    subtitle: "Volunteer Service Award – Gold Level",
-    icon: "🎖️",
-    category: "Service",
-    highlight: true,
-  },
-  {
-    title: "AP Scholar with Distinction",
-    subtitle: "Multiple AP 5s",
-    icon: "📚",
-    category: "Academic",
+    title: "STEAM Showcase",
+    subtitle: "1st Place • $700 Prize",
+    icon: "🚀",
+    category: "Competition",
     highlight: false,
   },
-  {
-    title: "Math Team Regional",
-    subtitle: "2nd Place at Regionals",
-    icon: "📐",
-    category: "Mathematics",
-    highlight: false,
-  },
-];
-
-const roles = [
-  { title: "President of Business", org: "Computer Science Club" },
-  { title: "Vice President", org: "Computer Science Club" },
-  { title: "XPerience Intern", org: "Professional" },
 ];
 
 export default function Achievements() {
@@ -70,7 +64,6 @@ export default function Achievements() {
           <p className="text-terminal-muted text-sm">~/achievements $ cat trophies.log</p>
         </motion.div>
 
-        {/* Main Achievements Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
           {achievements.map((achievement, index) => (
             <motion.div
@@ -78,7 +71,7 @@ export default function Achievements() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
+              transition={{ delay: index * 0.08 }}
               whileHover={{ scale: 1.02 }}
               className={`relative border rounded-lg p-5 transition-all duration-300 ${
                 achievement.highlight
@@ -104,7 +97,6 @@ export default function Achievements() {
           ))}
         </div>
 
-        {/* Leadership Roles */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -112,48 +104,19 @@ export default function Achievements() {
           className="border border-terminal-border rounded-lg overflow-hidden bg-terminal-dark/30"
         >
           <div className="px-4 py-3 bg-terminal-gray border-b border-terminal-border">
-            <span className="text-terminal-cyan text-sm font-medium">// Leadership Roles</span>
+            <span className="text-terminal-cyan text-sm font-medium">// Leadership</span>
           </div>
-          <div className="p-4">
-            <div className="flex flex-wrap gap-4">
-              {roles.map((role, index) => (
-                <motion.div
-                  key={role.title}
-                  initial={{ opacity: 0, x: -10 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="flex items-center gap-2"
-                >
-                  <span className="text-terminal-green">◆</span>
-                  <span className="text-terminal-text text-sm font-medium">{role.title}</span>
-                  <span className="text-terminal-muted text-sm">@ {role.org}</span>
-                </motion.div>
-              ))}
-            </div>
+          <div className="p-4 space-y-2">
+            <p className="text-terminal-text text-sm">
+              <span className="text-terminal-green">◆</span> President of Education, Computer Science Club
+            </p>
+            <p className="text-terminal-text text-sm">
+              <span className="text-terminal-green">◆</span> Vice President of Engineering, Science, and Math, Computer Science Club
+            </p>
+            <p className="text-terminal-text text-sm">
+              <span className="text-terminal-green">◆</span> Co-Captain, Science Olympiad
+            </p>
           </div>
-        </motion.div>
-
-        {/* ASCII Trophy */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.3 }}
-          className="mt-8 flex justify-center"
-        >
-          <pre className="text-terminal-green/30 text-xs leading-tight font-mono select-none">
-{`      ___________
-     '._==_==_=_.'
-     .-\\:      /-.
-    | (|:.     |) |
-     '-|:.     |-'
-       \\::.    /
-        '::. .'
-          ) (
-        _.' '._
-       '-------'`}
-          </pre>
         </motion.div>
       </div>
     </section>
